@@ -1,0 +1,11 @@
+@import '../../../styles/card.scss';
+
+.ticket {
+  width: 100%;
+  background: red;
+  background: linear-gradient(90deg, rgba(36,29,0,0) 0%, rgba(131,30,221,1) 35%, rgba(58,222,255,1) 100%);
+}
+
+.ticket:hover {
+  cursor: pointer;
+}

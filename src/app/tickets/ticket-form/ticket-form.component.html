@@ -1,0 +1,41 @@
+<h3>Create a new ticket</h3>
+<form class="ticket-form border rounded p-3" [formGroup]="ticketForm">
+  <label for="title">
+    Title <br>
+    <input class="form-control" type="text" id="title" [formControlName]="'title'">
+  </label>
+  <br>
+  <label for="description">
+    Description <br>
+    <input class="form-control" type="text" id="description" [formControlName]="'description'">
+  </label>
+  <br>
+  <label for="major">Major<br>
+    <select class="form-select" id="major" [formControlName]="'major'">
+      <option value="" disabled>Choisie ta voie</option>
+      <!-- <option *ngFor="let mj of major" value="st.id"></option> -->
+      <option value="SI">SI</option>
+      <option value="ECO">ECO</option>
+      <option value="PSY">PSY</option>
+      <option value="LI">LI</option>
+      <!-- <option *ngFor="let currentMajor of Major" [value]="currentMajor">{{currentMajor}}</option> -->
+    </select>
+  </label>
+  <br>
+
+  <label for="student">student<br>
+    <select class=" form-select" id="student" [formControlName]="'studentID'">
+      <option value="" disabled>Etudiant</option>
+      <option *ngFor="let st of studentList" value="st.id">
+        {{st.id}} - {{st.nom}} {{st.prenom}}
+      </option>
+    </select>
+  </label>
+  <br>
+
+
+  <button type="submit" class="btn-custom" (click)="addTicket()">Create</button>
+</form>
+
+<!-- Uncomment below to see your form structure and how it changes-->
+<!-- <br><br>{{ticketForm.getRawValue() | json}} -->

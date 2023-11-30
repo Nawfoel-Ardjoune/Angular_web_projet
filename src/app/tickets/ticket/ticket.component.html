@@ -1,0 +1,24 @@
+<div class="card ticket" (click)="selectTicket()">
+  <script src="https://kit.fontawesome.com/eaeef358fc.js" crossorigin="anonymous"></script>
+  <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
+  <h3>Card: {{ticket.title}}</h3>
+  <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
+
+  <i class="far fa-user"></i> {{ticket.student.nom}} {{ticket.student.prenom}}
+   {{ticket.major}}
+
+  <!-- <h3>Projet{{student.id}}</h3>
+  <i class="far fa-user"></i> {{student.nom}} {{student.prenom}} -->
+
+  <i class="fas fa-pen-nib" *ngIf="ticket.major == 'LI'"></i>
+  <i class="fas fa-dollar-sign" *ngIf="ticket.major == 'ECO'"></i>
+  <i class="fas fa-pills" *ngIf="ticket.major == 'SI'"></i>
+  <i class="fas fa-brain" *ngIf="ticket.major == 'PSY'"></i>
+  <br>
+  <!-- <button class="delete" type="button" (click)="deleteTicket()">supression</button> -->
+</div>
+
+<!-- <div class="student card">
+  <i class="far fa-user"></i> {{student.nom}} {{student.prenom}} {{student.id}}
+
+</div> -->
